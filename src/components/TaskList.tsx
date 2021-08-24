@@ -22,12 +22,15 @@ export function TaskList() {
   }
 
   function handleToggleTaskCompletion(id: number) {
-    console.log(id);
+    const taskToComplete = tasks.find(task => task.id === id);
+    if(taskToComplete)
+    taskToComplete.isComplete = !taskToComplete?.isComplete;
+    console.log(taskToComplete?.isComplete);
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
   }
 
   function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID
+    setTasks(tasks.filter(task => task.id !== id));
   }
 
   return (
