@@ -19,6 +19,7 @@ export function TaskList() {
     if(!newTaskTitle.trim()) return;
     setCounter(counter + 1);
     setTasks([...tasks, { id: counter, title: newTaskTitle, isComplete: false}]);
+    setNewTaskTitle('');
   }
 
   function handleToggleTaskCompletion(id: number) {
