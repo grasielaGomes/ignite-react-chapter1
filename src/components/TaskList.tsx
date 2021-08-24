@@ -24,9 +24,8 @@ export function TaskList() {
   function handleToggleTaskCompletion(id: number) {
     const taskToComplete = tasks.find(task => task.id === id);
     if(taskToComplete)
-    taskToComplete.isComplete = !taskToComplete?.isComplete;
-    console.log(taskToComplete?.isComplete);
-    // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
+    taskToComplete.isComplete = !taskToComplete.isComplete;
+    setTasks([...tasks]);
   }
 
   function handleRemoveTask(id: number) {
